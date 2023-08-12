@@ -1,0 +1,103 @@
+# Use the Google style in this project.
+BasedOnStyle: Google
+
+AccessModifierOffset: '-3'
+AlignAfterOpenBracket: Align
+AlignTrailingComments: 'true'
+AllowAllArgumentsOnNextLine: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'true'
+AllowShortCaseLabelsOnASingleLine: 'false'
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: 'true'
+AllowShortFunctionsOnASingleLine: Empty
+AlwaysBreakBeforeMultilineStrings: 'false'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeTernaryOperators: 'true'
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: 'true'
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: false
+  AfterControlStatement: MultiLine
+  AfterEnum: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: false
+  BeforeElse: false
+  BeforeLambdaBody: true
+  BeforeWhile: true
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+ColumnLimit: '120'
+ContinuationIndentWidth: '2'
+DerivePointerAlignment: 'false'
+ExperimentalAutoDetectBinPacking: 'false'
+IncludeBlocks: Regroup
+IndentCaseLabels: 'true'
+IndentPPDirectives: AfterHash
+IndentWidth: '4'
+IndentWrappedFunctionNames: 'true'
+KeepEmptyLinesAtTheStartOfBlocks: 'false'
+Language: Cpp
+MaxEmptyLinesToKeep: '2'
+PointerAlignment: Left
+ReflowComments: 'true'
+SortIncludes: 'true'
+SpaceAfterCStyleCast: 'true'
+SpaceBeforeAssignmentOperators: 'true'
+SpaceBeforeCpp11BracedList: 'true'
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: 'true'
+SpaceInEmptyParentheses: 'false'
+SpacesBeforeTrailingComments: '2'
+SpacesInAngles: 'false'
+SpacesInCStyleCastParentheses: 'false'
+Standard: c++17
+UseTab: Never
+TabWidth: 4
+AlignConsecutiveAssignments: 'AcrossComments'
+AlignConsecutiveMacros: 'AcrossComments'
+
+IncludeCategories:
+  # Note that the "main" header is priority 0
+  # The priority is assigned to first match in the ordered list
+  # C standard libraries
+  - Regex: '<(arpa/|netinet/|net/if|sys/)?[^\./]*\.h>'
+    Priority: 1
+  # C++ standard libraries
+  - Regex: '<[^/\./]*>'
+    Priority: 2
+  # Experimental or other system libraries
+  - Regex: '<'
+    Priority: 3
+  # Driver
+  - Regex: '"stm32*'
+    Priority: 4
+  # config
+  - Regex: '"Conf/*'
+    Priority: 5
+  # BSP
+  - Regex: '"BSP/*'
+    Priority: 6
+  # The rest
+  - Regex: '.*'
+    Priority: 7
+
+# Format raw string literals with a `pb` or `proto` tag as proto.
+RawStringFormats:
+  - Language: TextProto
+    Delimiters:
+      - 'pb'
+      - 'proto'
+    BasedOnStyle: Google
